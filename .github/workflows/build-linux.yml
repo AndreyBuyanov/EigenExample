@@ -17,5 +17,8 @@ jobs:
     - name: Install Eigen3
       run: sudo apt -y install libeigen3-dev
 
+    - name: Configure
+      run: cmake -DCMAKE_BUILD_TYPE:STRING=RelWithDebInfo -B build -G "Unix Makefiles"
+
     - name: Build
-      run: cmake -S . -B build --config RelWithDebInfo --target all
+      run: cmake -B build --config RelWithDebInfo --target all
