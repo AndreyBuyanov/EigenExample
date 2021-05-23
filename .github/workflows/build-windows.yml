@@ -22,6 +22,7 @@ jobs:
 
     - name: Configure
       run: |
+        echo %VCPKG_INSTALLATION_ROOT%
         set VCPKG_ROOT=%VCPKG_INSTALLATION_ROOT%
         cmake -DCMAKE_BUILD_TYPE:STRING=RelWithDebInfo -B build -G "Visual Studio 16 2019" -T host=x64 -A x64
 
