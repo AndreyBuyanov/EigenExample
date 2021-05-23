@@ -2,13 +2,9 @@ name: Build Linux
 
 on:
   push:
-    branches:
-      - master
-    tags:
-      - "*"
+    branches: [ main ]
   pull_request:
-    branches:
-      - master
+    branches: [ main ]
 
 jobs:
   build:
