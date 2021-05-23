@@ -13,8 +13,6 @@ jobs:
   build:
     name: Build
     runs-on: windows-latest
-    env:
-      VCPKG_ROOT: ${{ VCPKG_INSTALLATION_ROOT }}
     steps:
 
     - uses: actions/checkout@v2
