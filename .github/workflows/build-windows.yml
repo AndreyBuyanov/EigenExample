@@ -2,13 +2,9 @@ name: Build Windows
 
 on:
   push:
-    branches:
-      - master
-    tags:
-      - "*"
+    branches: [ main ]
   pull_request:
-    branches:
-      - master
+    branches: [ main ]
 
 env:
   VCPKG_DEFAULT_TRIPLET: x64-windows-static
