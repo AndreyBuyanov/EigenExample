@@ -1,0 +1,30 @@
+name: Build Windows
+
+on:
+  push:
+    branches:
+      - master
+    tags:
+      - "*"
+  pull_request:
+    branches:
+      - master
+
+env:
+  VCPKG_DEFAULT_TRIPLET: x64-windows-static
+
+jobs:
+  build:
+    name: Build
+    runs-on: windows-latest
+    steps:
+
+    - uses: actions/checkout@v2
+
+    - name: Install Eigen3
+      run: vcpkg install eigen3:${{ env.VCPKG_DEFAULT_TRIPLET }}
+
+    - name: Build
+      env:
+        VCPKG_ROOT: ${{ env.VCPKG_INSTALLATION_ROOT }}
+      run: cmake -S . -B build --config RelWithDebInfo --target all
