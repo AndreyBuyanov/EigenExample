@@ -21,6 +21,7 @@ jobs:
       run: vcpkg install eigen3:${{ env.VCPKG_DEFAULT_TRIPLET }}
 
     - name: Configure
+      shell: cmd
       run: |
         SET
         set VCPKG_ROOT=%VCPKG_INSTALLATION_ROOT%
